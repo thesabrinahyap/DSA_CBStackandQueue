@@ -77,13 +77,29 @@ void displayStack(VirtualSpace VS, StackList S);
 void visualizeStack(VirtualSpace VS, StackList S);
 
 //Queue Operations:
-void initQueue(Queue *q);
-bool isEmpty(Queue q);
-bool isFull (Queue q);
-void enqueue(VirtualSpace *VS, Queue *q, Product prod);
-void dequeue(VirtualSpace *VS, Queue q);
-Product peek(VirtualSpace VS, Queue q);
+void initQueue(Queue *q){
+	q->front = -1;
+	q->rear = -1;
+}
+bool isEmpty(Queue q){
+	return (q.rear + 1) % MAX == q.front;
+}
+bool isFull (Queue q){
+	return (q.rear)
+}
+void enqueue(VirtualSpace *VS, Queue *q, Product prod){
+	if(!isFull(*q)){
+		q->rear = (q->rear+1)%MAX;
+		VS->data[q->rear] = prod;
+	}
+}
+void dequeue(VirtualSpace *VS, Queue q){
+	if(!isEmpty(*q)){
+		q->front = (q->front + 1) % MAX;
+	}
+}
 void displayQueue(VirtualSpace VS, Queue q);
 void visualizeQueue(VirtualSpace VS, Queue q);
+
 #endif
 

@@ -4,6 +4,7 @@
 #define CB_STACK_QUEUE_H
 
 #define MAX 20
+#define EMPTY 9999
 typedef char String[20];
 
 typedef struct{
@@ -46,8 +47,8 @@ void deallocSpace(VirtualSpace *VS, int index);
 
 // Stack Operations:
 void initStack(StackList *S);
-bool isEmpty(VirtualSpace VS, StackList S);
-bool isFull (VirtualSpace VS, StackList S);
+bool isEmpty(StackList S);
+bool isFull (StackList S);
 void push(VirtualSpace *VS,StackList *S,Product prod);
 void pop(VirtualSpace *VS,StackList *S,);
 void displayStack(VirtualSpace VS, StackList S);
@@ -55,8 +56,8 @@ void visualizeStack(VirtualSpace VS, StackList S);
 
 //Queue Operations:
 void initQueue(Queue *q);
-bool isEmpty(VirtualSpace VS, Queue q);
-bool isFull (VirtualSpace VS, Queue q);
+bool isEmpty(Queue q);
+bool isFull (Queue q);
 void enqueue(VirtualSpace *VS, Queue *q, Product prod);
 void dequeue(VirtualSpace *VS, Queue q);
 void displayQueue(VirtualSpace VS, Queue q);
