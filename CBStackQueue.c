@@ -11,7 +11,7 @@ Date createDate(int date, int month, int year){
 	d.month = month;
 	d.year = year;
 	
-	return Date;
+	return d;
 }
 Product createProduct(int prodID, String prodName, int prodQty, double prodPrice, Date prodExp){
 	Product p;
